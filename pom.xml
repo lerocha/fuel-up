@@ -10,6 +10,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!-- Tell boot where the entry point is when running as a jar -->
+        <start-class>com.github.lerocha.fuelup.Application</start-class>
     </properties>
 
     <!-- Inherit defaults from Spring Boot -->
@@ -28,6 +30,7 @@
     </dependencies>
 
     <!-- Package as an executable jar -->
+    <!-- http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle/#getting-started-first-application-executable-jar -->
     <build>
         <plugins>
             <plugin>
