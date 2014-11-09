@@ -1,3 +1,3 @@
 # Fuel-Up
 
-My Spring Boot sample project.
+My Spring boot demo project.
