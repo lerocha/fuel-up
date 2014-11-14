@@ -16,6 +16,6 @@ public class HomeController {
     public String home(@RequestParam(value="name", required = false, defaultValue = "World") String name, Model model) {
         model.addAttribute("name", name);
         logger.info("home page request; name={}", name);
-        return "home";
+        return "index";
     }
 }
