@@ -17,6 +17,11 @@
                 <a class="navbar-brand" href="#">Fuel-up</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <div th:if="${#httpServletRequest.remoteUser}">
+                    <form class="navbar-form navbar-right" th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out" class="btn btn-success" />
+                    </form>
+                </div>
             </div>
             <!--/.navbar-collapse -->
         </div>

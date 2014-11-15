@@ -14,10 +14,6 @@
 <div class="container theme-showcase" role="main">
     <div class="jumbotron">
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out" class="btn btn-success" />
-        </form>
     </div>
 
     <div th:include="footer :: copy"></div>
