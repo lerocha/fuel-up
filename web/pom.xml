@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.lerocha</groupId>
-    <artifactId>fuelup-web</artifactId>
+    <artifactId>fuel-up-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>com.github.lerocha</groupId>
-        <artifactId>fuelup</artifactId>
+        <artifactId>fuel-up</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

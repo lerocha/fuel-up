@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.github.lerocha</groupId>
-    <artifactId>fuelup</artifactId>
+    <artifactId>fuel-up</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.artifactId} - ${project.version}</name>
