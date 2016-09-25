@@ -7,10 +7,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -25,13 +22,27 @@ public class BaseEntity implements Serializable {
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @Column(nullable = false)
     @CreatedDate
     private LocalDateTime createdDate;
 
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @Column(nullable = false)
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
+
+    @PrePersist
+    private void prePersist() {
+        LocalDateTime now = LocalDateTime.now();
+        createdDate = now;
+        lastModifiedDate = now;
+    }
+
+    @PreUpdate
+    private void preUpdate() {
+        lastModifiedDate = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
