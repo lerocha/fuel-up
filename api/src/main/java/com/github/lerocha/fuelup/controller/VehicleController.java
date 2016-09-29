@@ -14,6 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
@@ -37,6 +38,7 @@ public class VehicleController {
         Vehicle vehicle = new Vehicle("Audi", "A3 TDI", 2011);
         vehicle = vehicleRepository.save(vehicle);
         VehicleLog vehicleLog = new VehicleLog();
+        vehicleLog.setDate(LocalDateTime.now().minusDays(7));
         vehicleLog.setOdometerStart(new BigDecimal(1000));
         vehicleLog.setOdometerEnd(new BigDecimal(1300));
         vehicleLog.setUnitPrice(new BigDecimal(2.99));
